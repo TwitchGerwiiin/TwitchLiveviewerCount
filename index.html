@@ -4,12 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Twitchliveviewercount by Rookev</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 		#viewer_counter {
 			-webkit-text-fill-color: white;
 			-webkit-text-stroke-color: black;
-			-webkit-text-stroke-width: 2.00px; 
+			-webkit-text-stroke-width: 2.00px;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 2em;
 			position: fixed;
 			left: 0;
 			bottom: 0;	
@@ -72,7 +74,7 @@ $(document).ready(function() {
 					if (newViewerCount > currentViewerCount) {
 						var div = $('#viewer_counter')  
 						div.animate({fontSize: '4em'}, "slow");
-						div.animate({fontSize: '1em'}, "slow");
+						div.animate({fontSize: '2em'}, "slow");
 					}
 
 					$('#viewer_counter').html(newViewerCount);

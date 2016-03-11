@@ -73,11 +73,8 @@ $(document).ready(function() {
 
 					if (newViewerCount > currentViewerCount) {
 						var div = $('#viewer_counter');
-						div.animate({fontSize: '4em'}, "slow");
-						div.animate({color: 'green'});
-
-						div.animate({fontSize: '2em'}, "slow");
-						div.animate({color: 'white'});
+						div.animate({fontSize: '4em'; color: 'green'}, "slow");
+						div.animate({fontSize: '2em'; color: 'white'}, "slow");
 					}
 
 					$('#viewer_counter').html(newViewerCount);

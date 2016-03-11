@@ -17,7 +17,8 @@
   // the return value is assigned to QueryString!
   var query_string = {};
   var query = window.location.href;
-  var vars = query.split("#");
+  var vars = query.split("#")[1];
+  vars = vars.split("&");
   for (var i=0;i<vars.length;i++) {
     var pair = vars[i].split("=");
         // If first entry with this name

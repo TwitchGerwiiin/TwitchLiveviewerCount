@@ -36,11 +36,18 @@
     return query_string;
   }();
 
+  var username = QueryString.username;
+  var refreshInSeconds = 5000;
+
+  if (QueryString.refreshInSeconds !== undefined) {
+    var refreshInSeconds = QueryString.refreshInSeconds * 1000;
+  }
+
 
   $(document).ready(function() {
     loadViewers();
     function loadViewers(){
-      $.getJSON('https://api.twitch.tv/kraken/streams/'+encodeURIComponent(QueryString.username)+"?callback=?", function(data) {
+      $.getJSON('https://api.twitch.tv/kraken/streams/'+encodeURIComponent(username)+"?callback=?", function(data) {
 
         if(data["stream"]!=null){
           if(data['streams']){
@@ -57,7 +64,7 @@
     }
     setInterval(function(){
       loadViewers();
-    }, QueryString.refreshInSeconds*1000);
+    }, QueryString.refreshInSeconds);
   });
 </script>
 <div id="viewer_counter">Loading...</div>
